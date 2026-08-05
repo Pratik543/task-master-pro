@@ -1,0 +1,13 @@
+key_name      = "your-aws-generated-keypair"
+instance_type = "m7i-flex.large" # 't3.micro'=1GB Mem 't3.small'=2GB Mem 'c7i-flex.large'=4GB Mem 'm7i-flex.large'=8GB Mem
+
+kubernetes_instance_type  = "m7i-flex.large"
+kubernetes_instance_count = 3
+
+vpc_cidr          = "10.0.0.0/16"
+subnet_cidr       = "10.0.1.0/24"
+availability_zone = "ap-south-1a"
+project_name      = "task-master"
+
+enable_kubernetes = false
+
