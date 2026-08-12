@@ -15,7 +15,7 @@ output "kubernetes_node_elastic_ips" {
 output "kubernetes_node_ssh_commands" {
   description = "Example SSH commands for the Kubernetes nodes keyed by node name"
   value = {
-    for idx, node in aws_instance.k8s_node : node.tags["Name"] => "ssh -i ${var.key_name}.pem ubuntu@${node.public_ip}"
+    for idx, node in aws_instance.k8s_node : node.tags["Name"] => "ssh -i ${var.key_name}.pem ubuntu@${aws_eip.k8s_node[idx].public_ip}"
   }
 }
 
